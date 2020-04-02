@@ -18,12 +18,14 @@ import dmacc.repository.ComputerRepository;
 // Austin Rathje
 
 @SpringBootApplication
-public class ComputersSpringEternalApplication implements CommandLineRunner{
+public class ComputersSpringEternalApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(ComputersSpringEternalApplication.class, args);
 	}
 
+	/**
+	 
 	@Autowired
 	ComputerRepository repo;
 
@@ -52,4 +54,6 @@ public class ComputersSpringEternalApplication implements CommandLineRunner{
 		// closes the ApplicationContext resource leak 
 		((AbstractApplicationContext) appContext).close();
 	}
+	
+	**/
 }

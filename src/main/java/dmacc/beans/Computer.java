@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class Computer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
+	private long id;
 	String operatingSystem;
 	String cpu;
 	double cost;
@@ -137,7 +137,7 @@ public class Computer {
 	/**
 	 * @return the id
 	 */
-	public int getId() {
+	public long getId() {
 		return id;
 	}
 
