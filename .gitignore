@@ -14,7 +14,7 @@ local.properties
 .settings/
 .loadpath
 .recommenders
-application.properties
+git rm --cached project.properties
 
 # External tool builders
 .externalToolBuilders/
