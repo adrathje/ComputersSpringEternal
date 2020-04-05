@@ -2,14 +2,58 @@
 <head>
 <meta charset="UTF-8">
 <title>Add New Computer</title>
+<script type = "text/javascript">
+         <!--
+         function validate() {
+             
+             if( document.myForm.operatingSystem.value == "" ) {
+                alert( "Please provide your Operating System!" );
+                document.myForm.operatingSystem.focus() ;
+                return false;
+             }
+             if( document.myForm.cpu.value == "" ) {
+                alert( "Please provide your CPU!" );
+                document.myForm.cpu.focus() ;
+                return false;
+             }
+             if( document.myForm.cost.value == "" || isNaN( document.myForm.cost.value ) ||
+            		 document.myForm.cost.value > 0.0 ){
+                
+                alert( "Please enter numbers only, cost must be greater than zero." );
+                document.myForm.cost.focus() ;
+                return false;
+             }
+             if( document.myForm.ram.value == "" || isNaN( document.myForm.ram.value ) ||
+            		 document.myForm.ram.value >=1 ) {
+                
+                alert( "RAM but be a number and must be at least 1." );
+                document.myForm.ram.focus() ;
+                return false;
+             }
+             if( document.myForm.computerCase.brand.value == "" ) {
+                
+            	alert( "Please provide your computer case brand!" );
+                document.myForm.computerCase.brand.focus() ;
+                return false;
+             }
+             if( document.myForm.computerCase.fans.value == "" || isNaN( document.myForm.computerCase.fans.value ) ||
+            		 document.myForm.computerCase.fans.value == 0 ) {
+                
+                alert( "Computer case must have at least one fan." );
+                document.myForm.computerCase.fans.focus() ;
+                return false;
+             }
+          }
+         -->
+      </script>      
 </head>
 <body>
-	<form th:object="${newComputer}"
+	<form action = "/cgi-bin/test.cgi" name = "myForm" onsubmit = "return(validate());" th:object="${newComputer}"
 		th:action="@{/update/{id}(id=${newComputer.id})}" method=POST>
 		Operating System: <input name="operatingSystem" size="20"
 			th:field="*{operatingSystem}"> <br /> CPU: <input name="cpu"
 			size="20" th:field="*{cpu}"><br /> Cost: <input name="cost"
-			size="10" th:field="*{cost}"><br /> RAM: <input name="ram"
+			size="10" th:field="*{cost}"><br /> RAM (in GB): <input name="ram"
 			size="10" th:field="*{ram}"><br /> Computer case brand: <input
 			name="computerCase.brand" size="20" th:field="*{computerCase.brand}"><br />
 		Number of computer case fans:<input name="computerCase.fans" size="10"
